@@ -33,6 +33,10 @@ class Student
     DB[:conn].execute(sql, [@name, @grade, @id])
   end
 
+  def self.new_from_db(row)
+    binding.pry
+  end
+
   def self.create(name, grade)
     student = self.new(name, grade)
     student.save
