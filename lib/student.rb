@@ -19,9 +19,9 @@ class Student
     else
       sql = <<-SQL
       INSERT INTO students (name, grade) VALUES (?, ?);
-      SELECT last_insert_rowid() FROM students
+      SELECT last_insert_rowid() FROM students;
       SQL
-      DB[:conn].execute(sql)
+      DB[:conn].execute(sql)[0][0]
     end
   end
 
