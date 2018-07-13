@@ -21,7 +21,7 @@ class Student
       INSERT INTO students (name, grade) VALUES (?, ?);
       SELECT last_insert_rowid() FROM students
       SQL
-      DB[:conn].c
+      DB[:conn].execute(sql)
     end
   end
 
