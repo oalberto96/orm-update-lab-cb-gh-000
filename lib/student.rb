@@ -33,6 +33,10 @@ class Student
     DB[:conn].execute(sql, [@name, @grade, @id])
   end
 
+  def self.create(name, grade)
+    self.new(name, grade)
+  end
+
   def self.create_table
     sql = <<-SQL
     CREATE TABLE students (
